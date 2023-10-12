@@ -1,0 +1,23 @@
+images:
+- location: "https://cloud-images.ubuntu.com/releases/23.04/release-20230502/ubuntu-23.04-server-cloudimg-amd64.img"
+  arch: "x86_64"
+  digest: "sha256:13965c84c65cbab0b34326ac34ac0c47a88030f9dff80e6391e56cb9077cadd0"
+- location: "https://cloud-images.ubuntu.com/releases/23.04/release-20230502/ubuntu-23.04-server-cloudimg-arm64.img"
+  arch: "aarch64"
+  digest: "sha256:76a0fc791ed48ea8d0325463e2748e06aa3836292df1178ee4af8daf12a643bf"
+- location: "https://cloud-images.ubuntu.com/releases/23.04/release/ubuntu-23.04-server-cloudimg-amd64.img"
+  arch: "x86_64"
+- location: "https://cloud-images.ubuntu.com/releases/23.04/release/ubuntu-23.04-server-cloudimg-arm64.img"
+  arch: "aarch64"
+networks:
+- lima: shared
+- lima: routerPort1
+  macAddress: "de:ad:be:ef:00:01"
+  interface: "en0"
+- lima: routerPort2
+  macAddress: "de:ad:be:ef:00:02"
+  interface: "en1"
+mounts:
+- location: "~"
+- location: "/tmp/lima"
+  writable: true
